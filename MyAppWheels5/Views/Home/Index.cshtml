@@ -1,0 +1,37 @@
+﻿@model IEnumerable<TypeOfVehicle>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="clearfix">
+    <div class="left-advert"></div>
+    <div class="myContainer">
+        <b>Выбирите критерии поиска</b>
+        <div class="navigation">
+            <div id="Navigation">
+                <div id="IdTypeOfVehicle">
+                    <ul>
+                        Кузов:   
+                        @foreach (var i in Model)
+                        {
+                            <li value="@i.Id">@i.NameVehicle</li>
+                        }
+                    </ul>
+                </div>
+            </div>
+            <div class="text-center" id="spinner" hidden>
+                <br />
+                <i class="fa fa-spinner fa-spin fa-2x fa-fw"></i>
+            </div>
+            <div id="Send" class="text-center fix-out"></div>
+        </div>
+        <div></div>
+        <div id="ListOfVehicle">
+            <div class="text-center" id="spinner2" hidden>
+                <br />
+                <i class="fa fa-spinner fa-spin fa-2x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+    <div class="right-advert"></div>
+</div>

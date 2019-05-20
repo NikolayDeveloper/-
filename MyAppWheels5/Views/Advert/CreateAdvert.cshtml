@@ -1,0 +1,49 @@
+﻿@model List<MyAppWheels5.TypeOfVehicle>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Подача объявления</title>
+    <link href="~/Content/StyleForAdvert.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="Mycontainer">
+        <div class="panel-heading text-center">
+            <h4>Для подачи объяления, начните с выбора авто</h4>
+        </div>
+        @using (Html.BeginForm("PostAdvert", "Advert", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            {
+                @Html.AntiForgeryToken();
+                @Html.ValidationSummary();
+                <div class="clearBox">
+                    <div id="TypeOfVehicle">
+                        <div class="block">
+                            @Html.DropDownList("NameVehicle", ViewBag.typesOfCar as SelectList, "Выбирите тип авто", new { required = "true" })
+                            @Html.ValidationMessage("NameVehicle", "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                     <div id="Markka"></div>
+                    <div id="Model"></div>
+                </div>
+                <div class="text-center" id="spiner" hidden>
+                    <br />
+                    <i class="fa fa-spinner fa-spin fa-2x fa-fw"></i>
+                </div>
+        <div class="margin-top"></div>
+        <div id="ChangebleAttributes"></div>
+        <div id="ExtraAttributes"></div>
+        }
+    </div>
+     <script src="~/Scripts/jquery-1.10.2.js"></script>
+    <script src="~/Scripts/bootstrap.js"></script>
+    <script src="~/Scripts/scriptForAdvert.js"></script>
+</body>
+</html>
+
+

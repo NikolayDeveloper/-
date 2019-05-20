@@ -1,0 +1,11 @@
+﻿@model IEnumerable<MyAppWheels5.Model>
+<div id="IdModel">
+    <ul>
+        <b>Модель:</b>
+        @foreach (var i in Model)
+        {
+            <li value="@i.Id">@i.NameModel</li>
+        }
+    </ul>
+</div>
+

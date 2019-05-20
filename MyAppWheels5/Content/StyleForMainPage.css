@@ -1,0 +1,120 @@
+﻿*{
+   box-sizing: border-box;
+}
+html, body, div, span, h1, h2, h3, h4, h5, h6, p, a, img, dl, dt, dd, 
+ol, ul, li, form, table, caption, tr, th, td, article, aside, footer, header,button{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+}
+body{
+    background-color:aliceblue;
+}
+@media (max-width: 768px) {
+   .left-advert,
+    .right-advert{
+        display: none;
+    }
+}
+.main-container{
+    background-color:antiquewhite;
+}
+.myContainer{
+    float: left;
+    width: 70%;
+    min-width: 500px;
+    position: relative;   
+}
+.navigation{
+    background-color:bisque;
+     border:1px solid black;
+     padding-top:5px;
+     padding-bottom:10px;
+   
+}
+.left-block{
+    float:left;
+    margin-left:20px;
+    margin-top:10px;
+    margin-bottom:10px;
+}
+.right-block{
+    float:right;
+     margin-right:20px;
+    margin-top:10px;
+     margin-bottom:10px;
+}
+.left-advert{
+   float: left;
+    width: 15%;  
+}
+
+.right-advert{
+   float: left;
+    width: 15%;
+}
+ul{
+    margin-left: 0px;
+    padding-left: 0px;
+    list-style: none;
+    margin-top:30px;
+}
+ul > li { 
+    display: inline; 
+    margin-right: -6px;
+    
+    padding: 5px;
+    border: 1px solid silver;
+    background-color:bisque;
+    box-shadow: 5px 2px 5px 0px #888;
+    cursor: pointer;
+}
+ul > li:hover{
+    color:darkgoldenrod;
+}
+
+.pick-out{
+    background-color:tan;
+   
+}
+.photo{
+     width:98px;
+    height:78px;
+    border:1px solid black;
+}
+.img-block{
+    position:relative;
+    width:100px;
+    height:80px;
+    float:left;
+    margin-right:10px;
+
+}
+.strip{
+    height:80px;
+    background-color:cornsilk;
+    border:1px solid burlywood;
+    overflow:hidden;
+    margin-top:5px;
+}
+.strip>a:hover,li a:hover,button a:hover{
+    text-decoration:none;
+}
+.fix-out{
+    padding-top:20px;
+
+}
+.digit{
+   position:absolute;
+  bottom:0%;
+   right:2px;
+   z-index:100;
+   color:black;
+   font:bold;
+   background-color:antiquewhite;
+   padding-left:1px;
+   padding-right:3px;
+
+}

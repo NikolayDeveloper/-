@@ -1,0 +1,39 @@
+﻿<div class="margin-top"></div>
+<div class="clearBox">
+    <div class="block">
+        @Html.Label("Price", "Цена")
+        @Html.TextBox("Price", "", new { required = "true", pattern= "[0-9]{3,10}",title = "Целое положительное число от 3 до 10 символов" })
+    </div>
+        <div class="margin-top"></div>
+    <div class="block" style="margin-left:50px">
+         @Html.Label("year","Год")
+        <select id="year" name="year" required >
+            <option hidden></option>
+            @for (var i = @ViewBag.time; i >= 1980; i--)
+            {
+                <option value=@i>@i</option>
+            }
+        </select>
+       </div>
+    </div>
+<div class="margin-top"></div>
+@Html.Label("NameCity","Выбирите город")
+@Html.DropDownList("NameCity", ViewBag.cities as SelectList, new { required = "true" })
+<div class="margin-top"></div>
+<div id="TextArea">
+     @Html.Label("text", "Напишите описание авто")
+    <div></div>
+     @Html.TextArea("text", "", 10, 40,  new { maxlength = "200", placeholder = "Не больше 200 символов" })
+</div>
+    <div class="margin-top"></div>
+<h4>Сюда добавьте фото</h4>
+<div id="Photo"></div>
+<div id="comments"></div>
+<p></p>
+<div>
+    <input type="file" name="Image" id="Image" multiple accept="image/png, image/jpeg" />
+</div>
+<div class="margin-top"></div>
+<div class="text-center">
+    <input type="submit" value="Опубликовать" class="btn btn-success" />
+</div>

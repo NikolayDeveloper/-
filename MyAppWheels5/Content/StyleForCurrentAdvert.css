@@ -1,0 +1,53 @@
+﻿*{
+   box-sizing: border-box;
+}
+html, body, div, span, h1, h2, h3, h4, h5, h6, p, a, img, dl, dt, dd, 
+ol, ul, li, form, table, caption, tr, th, td, article, aside, footer, header,button{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+}
+body {
+}
+.left-block{
+    float:left;
+    width:300px;
+    overflow:hidden;
+    margin-left:10px;
+}
+.right-block{
+    float:left;
+   margin-left:20px;
+
+}
+.big-block{
+    width:492px;
+    height:400px;
+    margin-bottom:10px;
+    margin-top:30px;
+    border:1px solid black;
+
+}
+.min-block{
+    margin-left:20px;
+    border:1px solid black;
+}
+
+.block{
+    float:left;
+    width:80px;
+    height:60px;
+     border:1px solid black;
+     margin:1px;
+     cursor:pointer;
+}
+.big-block img{
+    width:490px;
+    height:398px;
+}
+.block img{
+    width:78px;
+    height:58px;
+}

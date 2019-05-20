@@ -1,0 +1,78 @@
+﻿  *{
+       box-sizing: border-box;
+   }
+ html, body, div, span, h1, h2, h3, h4, h5, h6, p, a, img, dl, dt, dd, 
+ ol, ul, li, form, table, caption, tr, th, td, article, aside, footer, header,button
+    {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font-size: 100%;
+        vertical-align: baseline;
+     }
+ .Mycontainer{
+     width:500px;
+     margin-left:10%;
+     margin-right:auto;
+     padding:10px;
+     background-color:aquamarine;
+ }
+div.block{
+     display:inline-block;
+     margin-right:10px;
+     float:left;
+ }
+.clearBox:after {
+    content: " ";
+    display: table;
+    clear: both;
+}
+td{
+    padding-right:20px;
+}
+.margin-top{
+    margin-top:50px;
+}
+img{
+    height:60px;
+    width:80px;
+  
+}
+#Photo{
+    display:inline-block;
+    width:248px;
+    height:126px;
+    border:1px solid black;
+    background-color:antiquewhite;
+}
+.imgBlock{
+    width:80px;
+    height:60px;
+    position:relative;
+    margin:1px;
+    float:left;
+}
+.closeBlock{
+   display:none;
+   height:20px;
+   width:20px;
+   position:absolute;
+   top:0;
+   right:0;
+   z-index:100;
+   text-align:center;
+}
+.loadSuccess{
+    color:blue;
+}
+.loadCanceled{
+    color:red;
+}
+.removePhoto{
+    color:brown;
+}
+#Price{
+    width:100px;
+    height:100%;
+    margin-left:5px;
+}

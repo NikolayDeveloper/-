@@ -1,0 +1,45 @@
+﻿@model MyAppWheels5.GetListOfVehicle
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Объявление</title>
+    <link href="~/Content/StyleForCurrentAdvert.css" rel="stylesheet" />
+</head>
+<body>
+   <br />
+    <div class="left-block"> 
+        <p style="font-size:24px; color:burlywood;"><b>Подано: @Model.DateAdvert</b></p>
+        <p style="font-size:24px;"><b> @Model.NameMarkka @Model.NameModel-@Model.YearOfCar год</b></p>
+        <p style="font-size:18px;"> <b>Город @Model.NameCity <br />Цена: @Model.Price</b></p>
+        <p style="font-size:16px;">@Model.OptionOfVehicle @Model.OptionOfTruck</p>
+        <p>@Model.Discribe</p>
+    </div>
+    <div class="right-block">
+        @{ bool count = true;}
+        @foreach(var i in ViewBag.img)
+        {
+            if(count)
+            {
+                count = false;
+                <div class="big-block">
+                    @Html.Raw("<img  src=\"data:image/jpeg;base64,"
+                     + Convert.ToBase64String(@i.ImageData) + "\" />")
+                </div>
+               
+            }
+           <div class="block">
+               @Html.Raw("<img  src=\"data:image/jpeg;base64,"
+                     + Convert.ToBase64String(@i.ImageData) + "\" />")
+           </div>
+        }
+    </div>
+    <script src="~/Scripts/jquery-1.10.2.js"></script>
+    <script src="~/Scripts/scriptForCurrentAdvert.js"></script>
+</body>
+</html>

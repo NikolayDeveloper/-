@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главная</title>
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="~/Content/StyleForMainPage.css" rel="stylesheet" />
+     <link href="~/Content/bootstrap.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="main-container">
+        <div class="clearfix">
+            <div class="left-block">
+                <a href="/">
+                    <i class="fa fa-car fa-5x" aria-hidden="true"></i>
+                </a>
+            </div>
+            <div class="right-block">
+                @Html.Partial("_LoginPartial")
+                <div class="text-center" style="margin-top:20px;">
+                    <button class="btn btn-success">
+                    @Html.ActionLink("Подать объявление", "CreateAdvert", "Advert")
+                    </button>
+                </div>
+            </div> 
+        </div>
+        @RenderBody()
+    </div>
+    <script src="~/Scripts/jquery-1.10.2.js"></script>
+    <script src="~/Scripts/scriptForMainPage_1.js"></script>
+</body>
+</html>
+
+
+
+
+
+

@@ -1,0 +1,19 @@
+﻿@model IEnumerable<Markka>
+<div id="IdCity">
+    <ul>
+        <b>Город:</b>
+        @foreach(var i in @ViewBag.city)
+        {
+            <li  value="@i.Id">@i.NameCity</li>
+        }
+    </ul>
+</div>
+<div id="IdMarkka">
+    <ul>
+        <b>Марка:</b>
+        @foreach(var i in Model)
+        {
+            <li  value="@i.Id">@i.NameMarkka</li>
+        }
+    </ul>
+</div>

@@ -1,0 +1,42 @@
+﻿@model IEnumerable<MyAppWheels5.listOfVehicle>
+
+@{
+    int countElement=Model.Count();
+    string path = Server.MapPath("~/Files/withoutPhoto.png");
+    byte[] mas = System.IO.File.ReadAllBytes(path);
+}
+<div class="text-center fix-out">
+    @if (countElement == 0)
+    {
+        <div>Объявлений не найдено</div>
+    }
+    else
+    {
+        <div>По запросу найдено < @countElement > объявлений </div>
+    }
+</div>
+<br />
+@foreach (var i in Model)
+{
+    <div class="strip">
+        <a href="/Home/CurrentAdvert?IdListOfVehicle=@i.Id">
+            <div class="img-block">
+                @{ int lenght = @i.ImageOfCars.Count(); }
+               @if (lenght == 0)
+               {
+                   @Html.Raw("<img class='photo' src=\"data:image/jpeg;base64,"
+                     + Convert.ToBase64String(mas) + "\" />")
+               }
+               else
+               {
+                @Html.Raw("<img class='photo' src=\"data:image/jpeg;base64,"
+                     + Convert.ToBase64String(@i.ImageOfCars.FirstOrDefault().ImageData) + "\" />")
+
+                <div class="digit">@lenght</div>
+               }
+            </div>
+            <div>Подано: @i.DateAdvert</div>
+            <div>Год: @i.YearOfCar, Цена: @i.Price, @i.OptionOfTruck @i.OptionOfVehicle @i.Discribe</div>
+         </a>
+    </div>
+}

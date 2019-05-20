@@ -1,0 +1,12 @@
+﻿@model IEnumerable<MyAppWheels5.OptionsOfTruck>
+    <h4>Сделайте выбор</h4>
+<div></div>
+@foreach (var i in Model)
+{
+    <div>
+        <label>
+            @Html.RadioButton("RadioButton", @i.Name, new { required = "required" })
+            @i.Name
+        </label>
+    </div>
+}

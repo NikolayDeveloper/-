@@ -1,0 +1,25 @@
+﻿@if (Request.IsAuthenticated)
+{
+    string userEmail = User.Identity.Name;
+    AppUser user = null;
+    using (ConectionContext db = new ConectionContext())
+    {
+        user = db.AppUsers.Where(m => m.Email == userEmail).FirstOrDefault();
+    }
+    if (user != null)
+    {
+    <ul>
+        <li>Приветствую тебя, @user.UserName</li>
+        <li>@Html.ActionLink("Выйти", "Logoff", "Account")</li>
+    </ul>
+    }
+}
+else
+{
+    <ul>
+        <li>@Html.ActionLink("Регистрация", "Register", "Account")</li>
+        <li>@Html.ActionLink("Выполнить вход", "Login", "Account")</li>
+    </ul>
+       
+}
+
